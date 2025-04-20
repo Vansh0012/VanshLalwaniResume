@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vansh Lalwani - Resume</title>
+
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Vansh Lalwani - Aspiring Entrepreneur & Changemaker from IIM Bangalore." />
+  <meta name="keywords" content="Vansh Lalwani, IIM Bangalore, Resume, Entrepreneur, BBA, Student" />
+  <meta name="author" content="Vansh Lalwani" />
+  <meta property="og:title" content="Vansh Lalwani - Resume" />
+  <meta property="og:description" content="BBA Student at IIM Bangalore | Aspiring Entrepreneur & Changemaker" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.ico" />
+  
+  <!-- Google Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  />
+
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  
+
+  <!-- GSAP & ScrollReveal -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="unite.css" />
+  <style>
+    /* === RESET & BASE === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family:'Roboto',sans-serif; overflow-x:hidden; }
+    .light-mode { background:#fdf6ec; color:#1c1c1c; }
+    .dark-mode  { background:#0e1a2b; color:#eaeaea; }
+
+    /* === HEADER === */
+    header {
+      opacity:0; transform:translateY(-50px);
+      text-align:center; padding:3rem 1rem;
+      font-family:'Playfair Display',serif;
+      display:none;
+    }
+    header.show {
+      display:block;
+      animation:fadeInDown 1s forwards;
+    }
+    @keyframes fadeInDown {
+      to { opacity:1; transform:translateY(0); }
+    }
+    header h1 { font-size:3rem; color:#c27c5a; }
+    header p { font-size:1.2rem; margin-top:.5rem; color:#2f2f2f; }
+    .dark-mode header p { color:#eaeaea; }
+
+    /* Accent & hover */
+    .accent { color:#c27c5a !important; }
+    a.accent:hover { color:#84c3ff !important; }
+
+    /* === INTRO LOADER === */
+    #intro {
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      display:flex; justify-content:center; align-items:center;
+      background:inherit; z-index:10000;
+    }
+    .intro-loader {
+      font-family:'Playfair Display',serif;
+      font-size:3rem; color:#c27c5a;
+      overflow:hidden; white-space:nowrap; border-right:.15em solid #c27c5a;
+      width:0; animation:typing 2s steps(16) forwards,
+                  blink .5s step-end infinite alternate 2s,
+                  fadeOut 1s 4s forwards;
+    }
+    @keyframes typing { to { width:16ch; } }
+    @keyframes blink  { to { border-color:transparent; } }
+    @keyframes fadeOut{ to { opacity:0; visibility:hidden; } }
+
+    /* === HERO SECTION === */
+    #hero {
+      height:100vh; display:flex; flex-direction:column;
+      justify-content:center; align-items:center; text-align:center;
+      opacity:0; transform:translateY(30px);
+    }
+    #hero h2 {
+      font-family:'Playfair Display',serif; font-size:2.5rem; margin-bottom:1rem;
+    }
+    .enter-btn {
+      background:#c27c5a; color:#fff; border:none;
+      padding:1rem 2rem; font-size:1.1rem; border-radius:50px;
+      cursor:pointer; transition:all .3s ease;
+    }
+    .enter-btn:hover { background:#84c3ff; transform:scale(1.05); }
+
+    /* === NAVBAR === */
+    nav#navbar {
+      position:fixed; top:0; left:0; width:100%;
+      padding:1rem 2rem; display:none;
+      justify-content:center; background:rgba(255,255,255,.9);
+      backdrop-filter:blur(10px); z-index:9999;
+    }
+    nav#navbar.show { display:flex; }
+    nav#navbar a {
+      margin:0 1.5rem; color:#2f2f2f; text-decoration:none;
+      font-weight:500; transition:color .3s;
+    }
+    nav#navbar a:hover { color:#c27c5a; }
+
+    /* === SECTIONS === */
+    section {
+      padding:4rem 2rem; max-width:900px; margin:0 auto;
+      opacity:0; transform:translateY(50px);
+    }
+    section.visible { animation:fadeInUp .8s forwards; }
+    @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+
+    h2 {
+      font-family:'Playfair Display',serif; font-size:2rem;
+      margin-bottom:1rem; border-bottom:2px solid #ccc;
+      padding-bottom:.5rem;
+    }
+    .dark-mode h2 { border-color:#444; }
+    ul { list-style:disc inside; }
+    li { margin:.8rem 0; line-height:1.4; }
+
+    /* === SKILLS === */
+    .skill { margin:1.5rem 0; }
+    .skill label { display:block; margin-bottom:.5rem; }
+    .skill-bar {
+      width:0; height:20px; background:#c27c5a;
+      border-radius:10px; transition:width 2s ease;
+    }
+
+    /* === TIMELINE === */
+    .timeline { position:relative; margin:2rem 0; }
+    .timeline::before {
+      content:''; position:absolute; left:20px; top:0; bottom:0;
+      width:4px; background:#c27c5a;
+    }
+    .timeline-event {
+      position:relative; margin:2rem 0 2rem 60px;
+      opacity:0; transform:translateX(-50px);
+      transition:all .6s ease;
+    }
+    .timeline-event.visible { opacity:1; transform:translateX(0); }
+    .timeline-dot {
+      position:absolute; left:12px; top:0; width:16px; height:16px;
+      background:#c27c5a; border-radius:50%;
+    }
+    .timeline-card {
+      background:#fffaf3; padding:1rem; border-radius:5px;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align:center; padding:2rem;
+      background:#0a1522; color:#dcd3c0;
+    }
+    .footer-icons a {
+      margin:0 .5rem; color:#f4c47c; font-size:1.5rem;
+      transition:color .3s;
+    }
+    .footer-icons a:hover { color:#84c3ff; }
+
+    /* === BUTTONS === */
+    .dark-mode-btn {
+      position:fixed; top:1rem; right:1rem;
+      padding:.5rem 1rem; border:none; border-radius:5px;
+      background:#f4c47c; color:#0e1a2b; cursor:pointer;
+      transition:background .3s;
+    }
+    .dark-mode-btn:hover { background:#84c3ff; }
+
+    .scroll-top {
+      position:fixed; bottom:1rem; right:1rem;
+      padding:.7rem .9rem; background:#c27c5a; color:#fff;
+      border:none; border-radius:50%; cursor:pointer;
+      display:none; transition:opacity .3s;
+    }
+
+    /* === RESPONSIVE === */
+    @media(max-width:768px) {
+      nav#navbar a { margin:0 .8rem; font-size:.9rem; }
+      h2 { font-size:1.6rem; }
+      header h1 { font-size:2rem; }
+      header p { font-size:1rem; }
+    }
+  </style>
+</head>
+<!-- Preloader -->
+<div id="preloader" class="preloader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Your website content -->
+<div id="content" style="display: none;">
+  <!-- Your existing content here -->
+</div>
+
+
+  <body class="light-mode" role="document">
+   
+
+  <!-- 1. Intro Loader -->
+  <div id="intro">
+    <div class="intro-loader">Vansh Lalwani</div>
+  </div>
+
+  <!-- 2. Hero Section -->
+  <section id="hero">
+    <h2>BBA Student at IIM Bangalore | Aspiring Entrepreneur & Changemaker</h2>
+    <button id="enter-btn" class="enter-btn">Click to Enter</button>
+    
+
+  <!-- 3. Animated SVG Replacement -->
+    <div class="animated-svg">
+      <svg viewBox="0 0 100 100" width="200" height="200">
+        <rect x="30" y="30" width="40" height="40" fill="#c27c5a">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="4s"
+            repeatCount="indefinite"/>
+        </rect>
+      </svg>
+    </div>
+
+  </section>
+
+  <!-- 4. Header (hidden initially) -->
+  <header id="main-header">
+    <h1>Vansh Lalwani</h1>
+    <p>BBA Student at IIM Bangalore | Aspiring Entrepreneur & Changemaker</p>
+  </header>
+
+  <!-- 5. Navbar -->
+  <nav id="navbar">
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#languages">Languages</a>
+    <a href="#contact">Contact</a>
+    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark/Light Mode">🌙</button>
+
+  </nav>
+
+  <!-- 6. About Me -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I am a passionate and driven student currently pursuing a Bachelor of Business Administration in Digital Business & Entrepreneurship at the Indian Institute of Management, Bangalore. With a robust academic background in commerce, economics, and finance, I bring together strategic insight and creative thinking to build solutions that matter. From leading events in school to shaping impactful experiences in college, I have consistently demonstrated leadership, adaptability, and the ability to drive meaningful outcomes through collaboration and innovation.</p><br>
+    <p>My journey includes participating in the prestigious AGILE COIL international collaboration program, where I worked on diverse global challenges with teammates from Japan, applying strategic thinking and cross-cultural communication. I am also spearheading a social-impact project focused on combating corruption through transparency and digital governance. With a desire to create real-world change, I aim to become a global citizen, leveraging technology, leadership, and entrepreneurship to uplift people and disrupt systems for good.</p>
+  </section>
+
+  <!-- 7. Education -->
+  <section id="education" data-aos="fade-up">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Indian Institute of Management, Bangalore</strong> (2024 – 2027)<br>BBA in Digital Business & Entrepreneurship</li>
+      <li><strong>Chameli Devi Public School, Indore</strong> (2009 – 2024)<br>Graduated in Commerce Stream</li>
+    </ul>
+  </section>
+
+  <!-- 8. Skills -->
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skill"><label>Management Skills</label><div class="skill-bar" data-width="90%"></div></div>
+    <div class="skill"><label>Creativity</label><div class="skill-bar" data-width="85%"></div></div>
+    <div class="skill"><label>Digital Marketing</label><div class="skill-bar" data-width="80%"></div></div>
+    <div class="skill"><label>Negotiation</label><div class="skill-bar" data-width="75%"></div></div>
+    <div class="skill"><label>Critical Thinking</label><div class="skill-bar" data-width="85%"></div></div>
+    <div class="skill"><label>Leadership</label><div class="skill-bar" data-width="90%"></div></div>
+    <div class="skill"><label>Networking & Relationship Building</label><div class="skill-bar" data-width="80%"></div></div>
+  </section>
+
+  <!-- 9. Experience -->
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-event"><div class="timeline-dot"></div><div class="timeline-card">
+        <h3>Event Manager – Chameli Devi Public School</h3>
+        <p>Organized Sports Day, Teachers' Day, and Diwali Celebrations.</p>
+      </div></div>
+      <div class="timeline-event"><div class="timeline-dot"></div><div class="timeline-card">
+        <h3>Brandaholic Event Strategist – Prestige Institute of Management & Research</h3>
+        <p>Shaped and amplified event strategies to enhance audience experience.</p>
+      </div></div>
+      <div class="timeline-event"><div class="timeline-dot"></div><div class="timeline-card">
+        <h3>Event Leader – Senior Maths Balvigyan Competition</h3>
+        <p>Led event coordination, team management, and operations under tight deadlines.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- 10. Achievements -->
+  <section id="achievements" data-aos="fade-up">
+    <h2>Achievements</h2>
+    <ul>
+      <li>Awarded "Mr. Diligent" for outstanding leadership and dedication in school activities.</li>
+      <li>Selected for the prestigious AGILE COIL Program – a global collaboration program. <a href="https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/VVhqWEtWVFBZTHRtRmdyUy9sU3dzUT09" target="_blank" class="accent">View Badge</a></li>
+    </ul>
+  </section>
+
+  <!-- 11. Languages -->
+  <section id="languages" data-aos="fade-up">
+    <h2>Languages</h2>
+    <ul>
+      <li>English – Fluent</li>
+      <li>Hindi – Native</li>
+      <li>Japanese – Basic proficiency</li>
+    </ul>
+  </section>
+
+ <!-- 12. Contact -->
+<section id="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <p>Feel free to reach out for opportunities, collaborations, or inquiries:</p>
+  <ul>
+    <li>Email: <a href="mailto:vanshlalwani2007@gmail.com" class="accent">vanshlalwani2007@gmail.com</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/vansh-lalwani" target="_blank" class="accent">vansh-lalwani</a></li>
+    <li>Phone: +91‑9131977200</li>
+  </ul>
+</section> <!-- Closing the contact section -->
+
+<!-- 13. Footer -->
+<footer>
+  <div class="footer-icons">
+    <a href="https://www.linkedin.com/in/vansh-lalwani" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:vanshlalwani2007@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+919131977200"><i class="fas fa-phone"></i></a>
+  </div>
+  <p>&copy; 2025 Vansh Lalwani</p>
+</footer>
+
+<!-- === Floating Chatbot Button === -->
+<div id="chatbot-button" style="position: fixed; bottom: 20px; right: 20px; background-color: #333; color: #fff; padding: 15px 20px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+  💬
+</div>
+
+<!-- === Chatbot Popup === -->
+<div id="chatbot-popup" style="display: none; position: fixed; bottom: 80px; right: 20px; background-color: #f9f9f9; width: 300px; height: 400px; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); z-index: 1000;">
+  <h2 style="text-align: center;">Ask Me Anything 🤖</h2>
+  <div id="chat-log" style="height: 280px; overflow-y: auto; margin-bottom: 20px; background-color: #eee; padding: 10px; border-radius: 8px;"></div>
+  <div style="display: flex;">
+    <input type="text" id="user-input" placeholder="Type a message..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
+    <button onclick="sendMessage()" style="padding: 10px; border: none; background-color: #333; color: #fff; border-radius: 6px; cursor: pointer;">Send</button>
+  </div>
+</div>
+
+<!-- Chatbot Script -->
+<script src="chatbot.js"></script>
+
+  <!-- 15. Scroll-to-Top FAB -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- AOS & Initialization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration:800, once:true });
+  </script>
+
+  <!-- Main Interaction Script -->
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href'))
+                .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Intro loader & hero reveal
+    setTimeout(() => {
+      document.getElementById('intro').remove();
+      gsap.to('#hero', { opacity:1, y:0, duration:1 });
+    }, 4000);
+
+    // Enter button logic
+    document.getElementById('enter-btn').onclick = () => {
+      gsap.to('#hero',{ y:-100, opacity:0, duration:0.8 });
+      setTimeout(() => {
+        document.getElementById('hero').remove();
+        document.getElementById('main-header').classList.add('show');
+        document.getElementById('navbar').classList.add('show');
+        document.querySelectorAll('section:not(#hero)').forEach(s => s.classList.add('visible'));
+        window.scrollTo({ top:0, behavior:'smooth' });
+      }, 800);
+    };
+
+    // IntersectionObserver for skill bars & timeline
+    const skillBars = document.querySelectorAll('.skill-bar');
+    const timelineEvents = document.querySelectorAll('.timeline-event');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          if(entry.target.classList.contains('skill-bar')) {
+            entry.target.style.width = entry.target.dataset.width;
+          }
+          if(entry.target.classList.contains('timeline-event')) {
+            entry.target.classList.add('visible');
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    skillBars.forEach(bar => observer.observe(bar));
+    timelineEvents.forEach(te => observer.observe(te));
+
+    // Scroll-to-top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+    // Dark/Light mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    // Lazy-load images
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img').forEach(img => img.loading = 'lazy');
+    });
+    
+  </script>
+
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('preloader').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  });
+</script>
+
+
+</body>
+</html>

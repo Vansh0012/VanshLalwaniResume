@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vansh Lalwani | Resume</title>
+  <link rel="stylesheet" href="Project.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vansh Lalwani</h1>
+      <p>Future Entrepreneur | BBA at IIM Bangalore</p>
+      <a href="https://www.linkedin.com/in/vansh-lalwani-b0bb7330a" target="_blank" class="button">LinkedIn</a>
+      <a href="https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/VVhqWEtWVFBZTHRtRmdyUy9sU3dzUT09" target="_blank" class="button">AGILE COIL Badge</a>
+    </header>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I’m a driven, ambitious student at IIM Bangalore passionate about digital business, strategy, and innovation. With a sharp mindset for leadership, negotiation, and event management, I’m always ready to create impact and inspire change. My vision is to become a global entrepreneur who leads with purpose and creativity.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card" onclick="togglePopup('skills')">
+        <h3>Skills</h3>
+      </div>
+      <div class="card" onclick="togglePopup('experience')">
+        <h3>Experience</h3>
+      </div>
+      <div class="card" onclick="togglePopup('education')">
+        <h3>Education</h3>
+      </div>
+      <div class="card" onclick="togglePopup('achievements')">
+        <h3>Achievements</h3>
+      </div>
+    </section>
+
+    <div id="popup" class="popup hidden">
+      <span class="close" onclick="togglePopup()">×</span>
+      <div id="popup-content"></div>
+    </div>
+
+    <footer>
+      <p>📞 +91-9131977200 | ✉ vanshlalwani2007@gmail.com | 📍 Indore, Madhya Pradesh</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vansh Lalwani | Portfolio</title>
+
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            transition: all 0.5s ease;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+            transform: scale(1.1);
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            width: 200px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Skills Popup (Interactive) */
+        .skill-card p {
+            display: none;
+            background-color: #ff6f61;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .skill-card:active p {
+            display: block;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            width: 60%;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff9f8f;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background: linear-gradient(to right, #1f1f1f, #383838);
+        }
+
+        nav.dark-mode a:hover {
+            color: #f39c12;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Vansh Lalwani</h1>
+        <p>Digital Business & Entrepreneurship | Creative Leadership | Financial Strategist</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="javascript:void(0);" onclick="toggleDarkMode()">🌙</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" style="padding: 50px 0; background: rgba(255, 255, 255, 0.1); text-align: center;">
+        <h2>About Me</h2>
+        <p>I am a passionate business enthusiast with a deep interest in finance, economics, and entrepreneurship.
+            Currently pursuing a BBA in Digital Business & Entrepreneurship at IIM Bangalore.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 style="text-align: center; margin-top: 50px;">Skills</h2>
+        <div class="skills">
+            <div class="skill-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Leadership</h3>
+                <p>Led multiple school and college events, enhancing my skills in management, communication, and teamwork.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Strategic Planning</h3>
+                <p>Focused on developing innovative strategies and achieving goals through smart, tactical decision-making.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h3>Critical Thinking</h3>
+                <p>Analyzing problems deeply and providing well-thought-out solutions using logic and creativity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="padding: 50px 0; background: rgba(255, 255, 255, 0.1); text-align: center;">
+        <h2>Experience</h2>
+        <p>Event Manager | Brandaholic Event Strategist | Leadership in academic and extracurricular activities</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 style="text-align: center; margin-top: 50px;">Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+
+</html>

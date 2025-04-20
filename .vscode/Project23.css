@@ -1,0 +1,71 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Default body font */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif; /* Poppins for body */
+}
+
+/* Heading Fonts */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Playfair for headings */
+}
+
+/* Specific Typography Customization for Headings */
+h1 {
+    font-weight: 700;
+    font-size: 3.5rem; /* Adjust for your specific needs */
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* CSS Variables for Light and Dark Mode */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background: #ffffff;
+    --text-color: #333333;
+    --accent-color: #f39c12;
+}
+
+.dark-theme {
+    --background: #2c3e50;
+    --text-color: #ecf0f1;
+    --primary-color: #1abc9c;
+    --secondary-color: #9b59b6;
+    --accent-color: #f39c12;
+}
+
+/* Smooth Transition for Theme Changes */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Body Styling (light mode by default) */
+body {
+    background: linear-gradient(135deg, #6e7e8d, #3a4446);
+    color: #fff;
+}
+
+/* For Dark Mode */
+.dark-theme body {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+}

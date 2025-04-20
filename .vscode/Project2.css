@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+header .header-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.theme-toggle button:hover {
+    color: #ff0;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+}
+
+.social-media-icons a {
+    margin: 10px;
+}
+
+.social-media-icons img {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-media-icons img:hover {
+    transform: rotate(360deg);
+}
+
+.contact-container form input,
+.contact-container form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-container form button {
+    padding: 12px 20px;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container form button:hover {
+    background-color: #6a11cb;
+}
+
+footer {
+    background: #2575fc;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.dark-mode header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #434343 100%);
+}
+
+.dark-mode .skill-card {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .contact-container form input,
+.dark-mode .contact-container form textarea {
+    border: 2px solid #444;
+}
